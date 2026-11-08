@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Solo Leveling Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="solo-leveling-script.js"></script>
+</body>
+<!-- Theme Configuration -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#7f13ec",
+              "primary-dark": "#5e0eb0",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+              "card-dark": "#251b30",
+              "border-dark": "#3a2a4b",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            boxShadow: {
+              'glow': '0 0 15px -3px rgba(127, 19, 236, 0.5)',
+            }
+          },
+        },
+      }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="solo-leveling-styles.css">
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <link rel="stylesheet" href="solo-leveling-styles.css">
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-white pb-24 font-display">
+<!-- Top Status Bar -->
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-border-dark px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">menu</span>
+<span class="text-sm font-bold tracking-widest text-primary">SYSTEM</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-[#f5c518]">
+<span class="material-symbols-outlined text-lg fill-1">monetization_on</span>
+<span class="text-sm font-bold">1,200</span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+</div>
+</div>
+</div>
+<!-- Alert Banner -->
+<div class="mx-4 mt-4 p-3 bg-primary/20 border border-primary/40 rounded-lg flex items-start gap-3 animate-pulse">
+<span class="material-symbols-outlined text-primary">info</span>
+<div>
+<p class="text-sm font-bold text-primary mb-0.5">UNSPENT POINTS</p>
+<p class="text-xs text-white/70">You have 3 ability points available.</p>
+</div>
+</div>
+<!-- Profile Header Section -->
+<div class="p-4 flex flex-col items-center">
+<!-- Level Circle -->
+<div class="relative flex items-center justify-center w-32 h-32 mb-4">
+<!-- Circular Progress SVG -->
+<svg class="w-full h-full transform -rotate-90 drop-shadow-[0_0_10px_rgba(127,19,236,0.5)]">
+<circle cx="64" cy="64" fill="transparent" r="60" stroke="#3a2a4b" stroke-width="8"></circle>
+<circle cx="64" cy="64" fill="transparent" r="60" stroke="#7f13ec" stroke-dasharray="377" stroke-dashoffset="94" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Level</span>
+<span class="text-4xl font-bold text-white leading-none">24</span>
+</div>
+</div>
+<h1 class="text-2xl font-bold text-white mb-1">Sung Jin-Woo</h1>
+<div class="px-3 py-1 bg-card-dark rounded-full border border-border-dark">
+<span class="text-xs text-primary font-semibold tracking-wide uppercase">Class: Shadow Monarch</span>
+</div>
+<!-- XP Bar -->
+<div class="w-full mt-6">
+<div class="flex justify-between text-xs text-gray-400 mb-2 font-medium">
+<span>XP Progress</span>
+<span>4500 / 5000</span>
+</div>
+<div class="h-2 w-full bg-card-dark rounded-full overflow-hidden border border-border-dark">
+<div class="h-full bg-primary w-[85%] relative">
+<div class="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Attributes Grid -->
+<div class="px-4 mt-2">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-lg font-bold tracking-tight">ATTRIBUTES</h2>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">Details</button>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Strength -->
+<div class="bg-card-dark p-4 rounded-xl border border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500 text-lg">fitness_center</span>
+<span class="text-sm font-bold text-gray-300">STR</span>
+</div>
+<span class="text-xl font-bold text-white">45</span>
+</div>
+<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-[45%]"></div>
+</div>
+</div>
+<!-- Intelligence -->
+<div class="bg-card-dark p-4 rounded-xl border border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500 text-lg">psychology</span>
+<span class="text-sm font-bold text-gray-300">INT</span>
+</div>
+<span class="text-xl font-bold text-white">82</span>
+</div>
+<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 w-[82%]"></div>
+</div>
+</div>
+<!-- Agility -->
+<div class="bg-card-dark p-4 rounded-xl border border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">sprint</span>
+<span class="text-sm font-bold text-gray-300">AGI</span>
+</div>
+<span class="text-xl font-bold text-white">30</span>
+</div>
+<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-[30%]"></div>
+</div>
+</div>
+<!-- Vitality -->
+<div class="bg-card-dark p-4 rounded-xl border border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-500 text-lg">favorite</span>
+<span class="text-sm font-bold text-gray-300">VIT</span>
+</div>
+<span class="text-xl font-bold text-white">60</span>
+</div>
+<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-yellow-500 w-[60%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Daily Quest Section -->
+<div class="px-4 mt-6">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-lg font-bold tracking-tight text-white">DAILY QUEST: PREPARATIONS</h2>
+<div class="px-2 py-0.5 rounded bg-primary/20 text-primary text-[10px] font-bold border border-primary/30">ACTIVE</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="p-4 space-y-4">
+<!-- Quest Item 1 -->
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-6 w-6 rounded border-2 border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-medium text-gray-300 line-through decoration-primary decoration-2">Push-ups: 100</span>
+<span class="text-xs font-bold text-primary">COMPLETE</span>
+</div>
+<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</div>
+</div>
+<!-- Quest Item 2 -->
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-6 w-6 rounded border-2 border-border-dark bg-transparent flex items-center justify-center">
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-medium text-white">Coding: 2 Hours</span>
+<span class="text-xs text-gray-400">1h 15m / 2h</span>
+</div>
+<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%] shadow-[0_0_10px_rgba(127,19,236,0.5)]"></div>
+</div>
+</div>
+</div>
+<!-- Quest Item 3 -->
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 h-6 w-6 rounded border-2 border-border-dark bg-transparent flex items-center justify-center">
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-medium text-white">Run: 10km</span>
+<span class="text-xs text-gray-400">0 / 10km</span>
+</div>
+<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[0%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rewards Footer -->
+<div class="bg-black/20 p-3 border-t border-border-dark flex justify-between items-center">
+<span class="text-xs text-gray-400 uppercase tracking-wide">Rewards pending</span>
+<button class="bg-primary hover:bg-primary-dark text-white text-xs font-bold px-3 py-1.5 rounded shadow-lg shadow-primary/20 transition-all">
+                    CLAIM REWARDS
+                </button>
+</div>
+</div>
+</div>
+<!-- Active Skill/Buffs (Horizontal Scroll) -->
+<div class="px-4 mt-6 mb-6">
+<h2 class="text-lg font-bold tracking-tight text-white mb-3">ACTIVE SKILLS</h2>
+<div class="flex gap-3 overflow-x-auto pb-4 snap-x">
+<!-- Skill 1 -->
+<div class="snap-center min-w-[140px] bg-card-dark p-3 rounded-lg border border-border-dark flex flex-col gap-2">
+<div class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center border border-gray-700 bg-cover bg-center" data-alt="purple shadowy icon representing stealth" style="background-image: linear-gradient(135deg, #1f1f1f, #2d2d2d);">
+<span class="material-symbols-outlined text-gray-400">visibility_off</span>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Stealth</p>
+<p class="text-[10px] text-gray-400">Active - Level 2</p>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="snap-center min-w-[140px] bg-card-dark p-3 rounded-lg border border-border-dark flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="w-10 h-10 rounded bg-primary/20 flex items-center justify-center border border-primary/40 relative z-10">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div class="relative z-10">
+<p class="text-sm font-bold text-white">Sprint</p>
+<p class="text-[10px] text-gray-400">Cooldown: 12s</p>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="snap-center min-w-[140px] bg-card-dark p-3 rounded-lg border border-border-dark flex flex-col gap-2">
+<div class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center border border-gray-700">
+<span class="material-symbols-outlined text-gray-400">swords</span>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Dagger Arts</p>
+<p class="text-[10px] text-gray-400">Passive</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 w-full bg-background-light/95 dark:bg-[#120c18]/95 backdrop-blur-md border-t border-border-dark py-2 px-6 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined filled">dashboard</span>
+<span class="text-[10px] font-bold">Status</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined">backpack</span>
+<span class="text-[10px] font-medium">Inventory</span>
+</button>
+<!-- Shop Button (Highlighted) -->
+<button class="relative -top-5 flex flex-col items-center justify-center">
+<div class="bg-primary h-14 w-14 rounded-full flex items-center justify-center border-4 border-[#120c18] shadow-[0_0_15px_rgba(127,19,236,0.6)]">
+<span class="material-symbols-outlined text-white text-2xl">storefront</span>
+</div>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined">sports_martial_arts</span>
+<span class="text-[10px] font-medium">Skills</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+<script src="solo-leveling-script.js"></script>
+</body>
+</body></html>
